@@ -1,0 +1,49 @@
+<% include('../layouts/header.ejs') %>
+
+
+
+  <link rel="stylesheet" href="/styleEdit.css">
+<title>Edit Page</title>
+
+  <div class="box">
+    <h2>Update Your Data</h2>
+    <form action="" method="post" onsubmit="return validateForm()">
+      <input type="hidden" name="user_id" value="<%= user._id  %>" />
+
+      <div class="inputBox">
+        <input type="text" name="name" value="<%= user.name  %>" id="name" placeholder="Enter name" required>
+        <span></span>
+        <i></i>
+      </div>
+
+      <div class="inputBox">
+        <input type="text" name="email" value="<%= user.email  %>" id="email" placeholder="Enter email" required>
+        <span></span>
+        <i></i>
+      </div>
+
+      <div class="inputBox">
+        <input type="number" name="mobile" value="<%= user.mobile  %>" id="mob" placeholder="Enter Number" required />
+      </div>
+      <span></span>
+
+      <input type="submit" value="submit" style="margin-top: 20px;" />
+    </form>
+  </div>
+
+
+  <script>
+    function validateForm() {
+      var iName = document.getElementById('name').value.trim();
+      var iEmail = document.getElementById('email').value.trim();
+      var iMob = document.getElementById('mob').value.trim();
+      var ipassword = document.getElementById('password').value.trim();
+
+      if (iName === '' || iEmail === '' || iMob === '' || ipassword === '') {
+        alert("White spaces are not allowed in any field Please include Letters");
+        return false;
+      }
+      return true;
+    }
+  </script>
+  <% include('../layouts/footer.ejs') %>

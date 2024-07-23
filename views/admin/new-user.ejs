@@ -1,0 +1,57 @@
+<% include('../layouts/header.ejs') %>
+
+<link rel="stylesheet" href="/styleN.css">
+<title>Adding New User</title>
+<div class="box">
+    <span class="borderline"></span>
+    <form method="post"  onsubmit="return validateForm()">
+        <h2>Register  New User</h2>
+        <% if (typeof message !== 'undefined') { %>
+            <p style="color: rgb(255, 0, 0);margin-top: 15px;"><%= message %></p>
+        <% } %>
+
+        <div class="inputBox">
+            <input type="text" name="name" id="name" required>
+            <span>Username</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="email" name="email"  id="email" required>
+            <span>Email</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="number" name="mob" id="mob" required>
+            <span>Mobilenumber</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password" id="password" required>
+            <span>Password</span>
+            <i></i>
+        </div>
+        <input type="submit" value="Register">
+        <div class="links">
+           <a  href="/admin/dashboard" class="cancel">Cancel</a>
+
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        var iName = document.getElementById('name').value.trim();
+        var iEmail = document.getElementById('email').value.trim();  
+        var iMob = document.getElementById('mob').value.trim();
+        var ipassword = document.getElementById('password').value.trim();
+
+        if (iName === '' || iEmail === '' || iMob === '' || ipassword === '') {
+            alert("White spaces are not allowed in any field");
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
+    }
+</script>
+
+
+
+<% include('../layouts/footer.ejs') %>

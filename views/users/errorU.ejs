@@ -1,0 +1,16 @@
+<% include('../layouts/header.ejs') %>
+
+<link rel="stylesheet" href="/styleError.css">
+    < <div class="container">
+        <h1>404</h1>
+        <p>Oops! The page you're looking for could not be found.</p>
+        <% if (error) { %>
+            <div class="error-message">
+                <h2>Error:</h2>
+                <p><%= error.message %></p>
+            </div>
+        <% } %>
+        <a href="/">Go to Homepage</a>
+
+
+    <% include('../layouts/footer.ejs') %>

@@ -1,0 +1,57 @@
+<% include('../layouts/header.ejs') %>
+
+   <link rel="stylesheet" href="/styleDash.css">
+<title>Dashboard</title>
+    <h1>Welcome to Dashboard</h1>
+    <div class="container">
+
+
+        <form action="/admin/search" method="get" class="search-form">
+            <input type="text" name="search" placeholder="Search by name">
+            <button>Search</button>
+        </form>
+
+    </div>
+    <div id="abtn">
+        <a href="/admin/new-user" class="button btns">Add New User</a>
+        <a href="/admin/home" class="logout">Back to Home</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(users.length> 0) { %>
+                <% for(let i=0; i<users.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= users[i].name %>
+                        </td>
+                        <td>
+                            <%= users[i].email %>
+                        </td>
+                        <td>
+                            
+                            <%= users[i].mobile %>
+                        </td>
+                        <td><a href="/admin/edit-user?id=<%= users[i]._id %>" class="btns">Edit</a></td>
+                        <td><a href="/admin/delete-user?id=<%= users[i]._id %>" class="btns">Delete</a></td>
+                    </tr>
+                    <% } %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="4">Users Not Found</td>
+                            </tr>
+                            <% } %>
+        </tbody>
+    </table>
+
+
+    </div>
+
+    <% include('../layouts/footer.ejs') %>

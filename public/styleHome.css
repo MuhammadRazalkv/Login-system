@@ -1,0 +1,79 @@
+main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table td, table th {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    
+    
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+#links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a.button {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #5f7fff;
+    padding: 12px 24px;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+a.button:hover {
+    background-color: #364fbc;
+}
+
+a.logout {
+    display: inline-block;
+    text-decoration: none;
+    color: #dc3545;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a.logout:hover {
+    color: #a71d2a;
+}

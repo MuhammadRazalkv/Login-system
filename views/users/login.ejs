@@ -1,0 +1,33 @@
+<% include('../layouts/header.ejs') %>
+<link rel="stylesheet" href="/styleL.css">
+<title>Login Page</title>
+<div class="box">
+    <span class="borderline"></span>
+    <form action="/login" method="post".
+    >
+        <h2>Sign in</h2>
+        <% if (typeof message !== 'undefined') { %>
+            <p style="color: red;margin-top: 10px;"><%= message %></p>
+        <% } %>
+        <% if (typeof logouted !== 'undefined') { %>
+            <p style="color: rgb(5, 5, 5);margin-top: 10px; background-color: rgb(131, 202, 24);"><%= logouted %></p>
+        <% } %>
+        <div class="inputBox">
+            <input type="email" name="email"  required>
+            <span>Enter your email</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="password" required>
+            <span>Password</span>
+            <i></i>
+        </div>
+        <input type="submit" value="Login">
+        <div class="links">
+        <p style="color:#8f8f8f; font-size: smaller;">Dont have an account<a href="/register" style="color:#0d47a1 ;">Sign up</a></p>    
+          
+        </div>
+    </form>
+</div>
+
+<% include('../layouts/footer.ejs') %>

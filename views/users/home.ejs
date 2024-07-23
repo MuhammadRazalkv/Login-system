@@ -1,0 +1,49 @@
+<% include('../layouts/header.ejs') %>
+
+<link rel="stylesheet" href="/styleHome.css">
+ <title>Home Page</title>
+<div id="main">
+<div class="container">
+    <h3>Welcome <%= user.name %></h3>
+
+    
+    <table>
+        <tr>
+            <th>Email</th>
+            <td><%= user.email %></td>
+        </tr>
+        <tr>
+            <th>Mobile Number</th>
+            <td><%= user.mobile %></td>
+        </tr>
+    </table>
+     <div id="links">
+
+         <a href="/edit?id=<%= user._id%>" class="button">Edit Profile</a>
+         
+     
+         <a href="/logout" class="logout">Logout</a>
+     </div>
+</div>
+<!-- <button id="mode" onclick="mode()"> Mode</button> -->
+</div>
+
+<!-- <script>
+    function mode() {
+       
+        var body = document.body;
+        var currentColor = body.style.background
+
+        if (currentColor === 'black') {
+            body.style.background = 'white'; 
+        } else {
+            body.style.background = 'black'; 
+        }
+    }
+</script> -->
+
+
+
+
+
+<% include('../layouts/footer.ejs') %>

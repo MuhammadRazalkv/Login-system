@@ -1,0 +1,27 @@
+<% include('../layouts/header.ejs') %>
+
+<link rel="stylesheet" href="/styleAHome.css">
+<title>Admin Home</title>
+<div class="container">
+  <h1>Welcome <%= admin.name %></h1>
+
+  
+  <table>
+      <tr>
+          <td>Email</td>
+          <td><%= admin.email %></td>
+      </tr>
+      <tr>
+          <td>Number</td>
+          <td><%= admin.mobile %></td>
+      </tr>
+  </table>
+ <div id="links">
+
+   <a href="/admin/dashboard"  class="button">Dashboard</a>
+   
+   <a href="/admin/logout" class="logout">Logout</a>
+ </div>
+</div>
+
+<% include('../layouts/footer.ejs') %>
